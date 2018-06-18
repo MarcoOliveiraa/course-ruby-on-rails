@@ -1,0 +1,8 @@
+"en":
+  admin:
+    pageHeader: "Admins"
+    panelHeading: "Show Admins"
+    name: "Name"
+    email: "E-mail"
+    kind: "Kind of access"
+    

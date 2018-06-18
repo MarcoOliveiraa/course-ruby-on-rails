@@ -1,0 +1,8 @@
+"pt-BR":
+  admin:
+    page_header: "Administradores"
+    panel_heading: "Mostrando Administradores"
+    name: "Nome"
+    email: "E-mail"
+    kind: "Tipo de acesso"
+    role: "Tipo de acesso"

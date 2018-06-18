@@ -1,0 +1,24 @@
+"pt-BR":
+    messages:
+      admin:
+        create: "Admin salvo com sucesso!" 
+        confirm: "Você realmente deseja excluir o administrador (%{item})?"
+        update: "Administrador alterado com sucesso!"
+        destroy: "Administrador excluido com sucesso!"
+          
+      category:
+        confirm: "Você realmente deseja excluir a categoria (%{item})?"
+        update: "Categoria alterada com sucesso!"
+        destroy: "Categoria excluida com sucesso!"  
+
+      login:
+        sign_in: "Identifique-se"
+        remember: "Relembrar acesso"
+        log_in: "Entrar"
+        password: "Senha"
+        
+      mail:
+        message_title: "Enviar e-mail para: "
+        
+      errors:
+        pundit: "Você não está autorizado a executar essa ação"
