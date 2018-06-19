@@ -13,15 +13,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
   </head>
 
   <body>
+    <div id="global-spin" class="loading" style="display: none;" >Loading&#8230;</div>
     <%= render partial: "layouts/site_shared/navigation" %>
     <%= yield %>
     <%= render partial: "layouts/site_shared/footer" %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
   </body>
 
 </html>

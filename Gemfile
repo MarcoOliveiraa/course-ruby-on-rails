@@ -13,6 +13,8 @@ gem 'i18n'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 # Foreman is a manager for Procfile-based applications.
 gem 'foreman'
+# The safe Markdown parser, reloaded.
+gem 'redcarpet'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
 # A simple, versatile notification library
@@ -22,9 +24,11 @@ gem 'devise-i18n', '~> 0.12.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-# Easy upload management for ActiveRecord
 gem 'sass-rails', '~> 5.0'
+# Easy upload management for ActiveRecord
 gem 'paperclip'
+# jQuery UI's JavaScript, CSS, and image files packaged for the Rails 3.1+ asset pipeline
+gem 'jquery-ui-rails'
 # Object oriented authorization for Rails applications
 gem 'pundit', '~> 1.1'
 # Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
@@ -66,6 +70,8 @@ group :development, :test do
 end
 
 group :development do
+  # Markdown Lorem Ipsum generator
+  gem 'doctor_ipsum'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

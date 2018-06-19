@@ -2,9 +2,12 @@ class Ad < ApplicationRecord
   belongs_to :category
   belongs_to :member
 
-  validates_presence_of :title, :description, :category, :price, :picture
+  validates :title, :description, :category, 
+            :picture, :finish_date, presence: true
 
-  has_attached_file :picture, styles: { medium: "350x180#", thumb: "100x100>" }, default_url: "/images/:styles /missing.pnh"
+  validates :price, numericality: { greater_than: 0 }
+
+  has_attached_file :picture, styles: { large: "800x300", medium: "350x180#", thumb: "100x100>" }, default_url: "/images/:styles /missing.pnh"
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   # Scopes

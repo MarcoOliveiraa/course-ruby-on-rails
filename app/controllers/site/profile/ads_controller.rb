@@ -15,7 +15,7 @@ class Site::Profile::AdsController < Site::ProfileController
 		@ad.member = current_member
 		
 		if @ad.save
-			redirect_to site_profile_ads_path, notice: "Anúncio atualizado com sucesso!"
+			redirect_to site_profile_ads_path, notice: "Anúncio criado com sucesso!"
 		else
 			render :new
 		end
@@ -40,6 +40,6 @@ class Site::Profile::AdsController < Site::ProfileController
 	end
 
 	def params_ad
-		params.require(:ad).permit(:id, :title, :category_id, :price, :description, :picture)
+		params.require(:ad).permit(:id, :title, :category_id, :price, :description, :picture, :finish_date)
 	end	
 end

@@ -1,3 +1,7 @@
+<%= content_for :javascripts do %>
+	<%= javascript_include_tag 'site/profile/ads' %>
+<% end %>
+
 <% if @ad.errors.any? %>
     <div class="alert alert-danger alert-dismissable">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -40,12 +44,24 @@
 		 	</div>
 	 	</div>
  	</div> 
+
+	<div class="row">
+	 	<div class="col-md-2" >
+		 	<div class="form-group"> 
+		 		<%= f.label :finish_date %> <br>
+		 		<%= f.text_field :finish_date, class:"form-control datepicker", required:"required" %>
+		 	</div>
+	 	</div>
+ 	</div>
+
  	
  	<div class="row">
  		<div class="col-md-6">
 		 	<div class="form-group" > 
 		 		<%= f.label :picture %> <br>
-		 		<%= image_tag @ad.picture(:medium), class:"img-thumbnail" %>
+		 		<% if @ad.picture.present? %>
+		 			<%= image_tag @ad.picture(:medium), class:"img-thumbnail" %>
+		 		<% end %>
 		 		<%= f.file_field :picture, class:"btn" %>
 		 	</div>
 	 	</div> 
@@ -56,6 +72,21 @@
 		 	<div class="form-group" > 
 		 		<%= f.label :description %>
 		 		<%= f.text_area :description, class:"form-control", rows:"10"  %>
+		 	</div>
+	 	</div> 
+ 	</div>  	
+
+ 	<div class="row">
+ 		<div class="col-md-12">
+		 	<div class="form-group" > 
+				<div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Preview
+                    </div>
+                    <div class="panel-body">
+                        <p><%= md_to_html(@ad.description) %></p>
+                    </div>
+                </div>
 		 	</div>
 	 	</div> 
  	</div> 

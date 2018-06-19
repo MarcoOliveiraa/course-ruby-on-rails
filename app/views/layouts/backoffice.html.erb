@@ -17,9 +17,6 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= stylesheet_link_tag    'backoffice', media: 'all' %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'backoffice' %>
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -49,18 +46,11 @@
         <!-- /#page-wrapper -->
     </div>
 
-    <% if notice %>
-        <script>
-            $.notify("<%= notice %>", "success");
-        </script>    
-    <% end %>
 
-    <% if alert %>
-        <script>
-            $.notify("<%= alert %>", "error");
-        </script>    
-    <% end %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'backoffice' %>
 
+    <%= render partial: "layouts/shared/notifications" %>
 </body>
 
 </html>

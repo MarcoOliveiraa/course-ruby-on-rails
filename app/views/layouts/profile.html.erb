@@ -14,9 +14,11 @@
     <%= stylesheet_link_tag    'site', media: 'all' %>
     <%= stylesheet_link_tag    'site/profile', media: 'all' %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'site' %>
-    <%= javascript_include_tag 'site/profile' %>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+
 
   </head>
 
@@ -60,5 +62,13 @@
 
     </div>
     <!-- /#wrapper -->
+    
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
+    <%= javascript_include_tag 'site/profile' %>
+    <!-- <%= javascript_include_tag 'site/profile/ads' %> -->
+
+    <%= yield :javascripts %>
+    <%= render partial: "layouts/shared/notifications" %> 
   </body>
 </html>
