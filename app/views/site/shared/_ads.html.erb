@@ -1,0 +1,36 @@
+<!-- <div class="row">
+  <% @ads.each do |ad| %>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <%= image_tag ad.picture.url(:medium) %>
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= link_to truncate(ad.title, length: 30), site_ad_detail_path(ad), remote: true  %>
+          </h4>
+          <p class="pull-right"><%= humanized_money_with_symbol ad.price %></p>
+          <p class="card-text"><%= truncate(ad.description, length: 100) %></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+ -->
+<div class="row">
+  <% @ads.each do |ad| %>
+    <div class="thumbnail col-lg-4 col-md-6 mb-4"> 
+      <%= image_tag ad.picture.url(:medium) %>
+      <div class="caption"> 
+          <div>
+            <h4><%= link_to truncate(ad.title, length: 30), site_ad_detail_path(ad), remote: true  %></h4> 
+            <%= humanized_money_with_symbol ad.price %>
+          </div>
+            <p class="card-text"><%= ad.description_short %></p>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>
+ 

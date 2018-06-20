@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   namespace :site do
     get 'home', to: 'home#index'
+    get 'search', to: 'search#ads'
 
     namespace :profile do
       resources :dashboard, only: [:index]
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     end
 
     resources :ad_detail, only: [:show]
+    resources :categories, only: [:show]
   end
 
   devise_for :admins, :skip => [:registrations]

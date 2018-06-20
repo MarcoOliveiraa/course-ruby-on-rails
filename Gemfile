@@ -17,14 +17,50 @@ gem 'foreman'
 gem 'redcarpet'
 # Flexible authentication solution for Rails with Warden
 gem 'devise', '~> 4.2'
-# A simple, versatile notification library
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 # Translations for the devise gem
 gem 'devise-i18n', '~> 0.12.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord. 
+gem 'friendly_id'
+# If Turbolinks are not enough for you. Wiselinks makes your application work faster.
+# gem 'wiselinks'
+
+source 'https://rails-assets.org' do
+
+  # Bootstrap
+  gem 'rails-assets-bootstrap'
+  # Bootstrap plugin for markdown editing
+  gem 'rails-assets-bootstrap-markdown'
+  # Marked
+  gem 'rails-assets-marked'
+  # A simple, versatile notification library
+  gem 'rails-assets-notifyjs'
+
+end
+
+
+# source 'https://rails-assets.org' do
+#   # Bootstrap
+#   gem 'rails-assets-bootstrap', '3.3.7'
+#   # Bootstrap Notify
+#   gem 'rails-assets-bootstrap.growl'
+#   # BootboxJS
+#   gem 'rails-assets-bootbox'
+#   # Animate CSS
+#   gem 'rails-assets-animate-css'
+#   # A simple, versatile notification library
+#   gem 'rails-assets-notifyjs'
+#   # Bootstrap Mardown
+#   gem 'rails-assets-bootstrap-markdown'
+#   # Marked
+#   gem 'rails-assets-marked'
+# end
+
+
+
 # Easy upload management for ActiveRecord
 gem 'paperclip'
 # jQuery UI's JavaScript, CSS, and image files packaged for the Rails 3.1+ asset pipeline
@@ -46,8 +82,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Bootstrap
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 # This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
 gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production

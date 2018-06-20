@@ -28,7 +28,8 @@ namespace :utils do
       5.times do
         Ad.create!(
           title: Faker::Lorem.sentence([2,3,4,5].sample),
-          description: DoctorIpsum::Markdown.entry,
+          description_md: DoctorIpsum::Markdown.entry,
+          description_short: Faker::Lorem.sentence([2,3].sample),
           member: Member.first,
           category: Category.all.sample,
           price: "#{Random.rand(99)}.#{Random.rand(99)}",
@@ -41,7 +42,8 @@ namespace :utils do
       100.times do
         Ad.create!(
           title: Faker::Lorem.sentence([2,3,4,5].sample),
-          description: DoctorIpsum::Markdown.entry,
+          description_md: DoctorIpsum::Markdown.entry,
+          description_short: Faker::Lorem.sentence([2,3].sample),
           member: Member.all.sample,
           category: Category.all.sample,
           price: "#{Random.rand(99)}.#{Random.rand(99)}",

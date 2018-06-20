@@ -10,24 +10,43 @@
 
     <title>Shop Homepage - Start Bootstrap Template</title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'site', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag 'site', media: 'all' %>
   </head>
 
   <body>
-    <div id="global-spin" class="loading" style="display: none;" >Loading&#8230;</div>
     <%= render partial: "layouts/site_shared/navigation" %>
-    <%= yield %>
+    <div class="container">
+      
+    
+      <div id="global-spin" class="loading" style="display: none;" >Loading&#8230;</div>
+      
+
+      <%= form_tag site_search_path, method: :get do %>        
+        <div class="well-sm">
+          <div class="row">
+            <div class="col-lg-3"></div>
+            
+            <div class="col-lg-6">
+              <div class="input-group">
+                <%= text_field_tag(:q, params[:q], {class:"form-control", placeholder:"Pesquisar por"}) %>
+                <span class="input-group-btn">
+                  <%= submit_tag("Pesquisar", class:"btn btn-default")  %>
+                </span>
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+
+            <div class="col-lg-3"></div>
+          </div>
+        </div>
+      <% end %>
+                  
+      <%= yield %>
+    </div>
     <%= render partial: "layouts/site_shared/footer" %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'site', 'data-turbolinks-track': 'reload' %>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
   </body>
 
 </html>

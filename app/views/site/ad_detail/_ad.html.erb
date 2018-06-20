@@ -4,7 +4,7 @@
         <h4 class="pull-right"><%= humanized_money_with_symbol @ad.price.to_s %></h4>
         <h4>
         	<p>
-        		<%= md_to_html(@ad.description) %>
+        		<%= @ad.description.html_safe %>
         	</p>
         </h4>
     </div>
@@ -73,5 +73,3 @@
     </div>
 
 </div>
-
-
