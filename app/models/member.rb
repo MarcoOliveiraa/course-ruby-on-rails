@@ -1,6 +1,7 @@
 class Member < ApplicationRecord
 
 	has_many :ads
+	has_many :profile_member
 
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable

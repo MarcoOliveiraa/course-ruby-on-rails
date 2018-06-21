@@ -7,9 +7,9 @@ class Members::RegistrationsController < Devise::RegistrationsController
   layout "site_devise"
 
   # GET /resource/sign_up
-  def new
-    super
-  end
+  # def new
+  #   super
+  # end
 
   # POST /resource
   # def create

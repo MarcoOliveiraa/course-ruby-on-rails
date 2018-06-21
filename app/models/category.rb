@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
 	
-	include FriendlyId
-	friendly_id :description, use: :slugged
+	# include FriendlyId
+	# friendly_id :description, use: :slugged
 
 	# Associations
 	has_many :ads

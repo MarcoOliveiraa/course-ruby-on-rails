@@ -32,6 +32,8 @@ gem 'kaminari-i18n'
 # gem 'wiselinks'
 # Automatically generate an entity-relationship diagram (ERD) for your Rails models.
 gem 'rails-erd'
+# A Ruby Gem that provides the same functionality of jQuery Raty library, and adds IMDB style rating.
+# gem 'ratyrate'
 
 source 'https://rails-assets.org' do
 

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+	# before_filter :store_current_location, :unless => :devise_controller?
+
 	# Pundit
 	protect_from_forgery
 	include Pundit
@@ -24,4 +26,10 @@ class ApplicationController < ActionController::Base
 			flash[:alert] = I18n.t('messages.errors.pundit')
 			redirect_to(request.referrer || root_path)
 		end
+
+	private
+
+		def store_current_location
+			stored_location_for(:member, request.url) 	
+		end 
 end

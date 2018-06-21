@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :site do
+    namespace :profile do
+      get 'my_data/index'
+    end
+  end
   get 'backoffice', to: 'backoffice/dashboard#index'
 
   namespace :backoffice do
@@ -16,6 +21,7 @@ Rails.application.routes.draw do
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :ads, only: [:index, :new, :create, :edit, :update]
+      resources :my_data, only: [:edit]
     end
 
     resources :ad_detail, only: [:show]

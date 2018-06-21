@@ -23,8 +23,10 @@ class Ad < ApplicationRecord
   scope :search, ->(q, page = 1) { 
     where("title LIKE ?", "%#{q}%").page(page).per(QTD_PAGE) 
   }
+  scope :where_category, ->(category, page = 1) { 
+    where(category: category).page(page).per(QTD_PAGE) 
+  }
   scope :to_the, ->(member) { where(member: member) }
-  scope :where_category, ->(category) { where(category: category) }
   
 
   # Gem rails-Money
