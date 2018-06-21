@@ -22,3 +22,19 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Dependências do projeto
+
+* ImageMagick (http://www.imagemagick.org)
+
+```
+sudo apt-get update
+sudo apt-get install imagemagick
+```
+
+* Graphviz (http://www.graphviz.org) -- Apenas para ambiente de desenvolvimento
+
+```
+sudo apt-get update
+sudo apt-get install graphviz
+```

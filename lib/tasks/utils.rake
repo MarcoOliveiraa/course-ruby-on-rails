@@ -53,5 +53,19 @@ namespace :utils do
       end
 
       puts "ANÚNCIOS cadastrados com sucesso!"
+
+      puts "Criando comentários fake"
+      
+      Ad.all.each do |ad|
+        (Random.rand(3)).times do
+          Comment.create!(
+            body: Faker::Lorem.paragraph([1,2,3].sample),
+            member: Member.all.sample,
+            ad: ad
+            )
+        end
+      end  
+      puts "Comentários criados com sucesso!"
+
     end
 end

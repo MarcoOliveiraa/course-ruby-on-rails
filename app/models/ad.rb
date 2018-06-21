@@ -1,8 +1,12 @@
 class Ad < ApplicationRecord
+  # Constante
+  QTD_PAGE = 6
+
   before_save :md_to_html
 
   belongs_to :category, counter_cache: true
   belongs_to :member
+  has_many :comments
 
   validates :title, :description_md, :description_short, :category, 
             :picture, :finish_date, presence: true
@@ -13,9 +17,15 @@ class Ad < ApplicationRecord
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   # Scopes
-  scope :descending_order, ->(quantity = 9) { limit(quantity).order(created_at: :desc) }
+  scope :descending_order, ->(page) { 
+    order(created_at: :desc).page(page).per(QTD_PAGE) 
+  }
+  scope :search, ->(q, page = 1) { 
+    where("title LIKE ?", "%#{q}%").page(page).per(QTD_PAGE) 
+  }
   scope :to_the, ->(member) { where(member: member) }
   scope :where_category, ->(category) { where(category: category) }
+  
 
   # Gem rails-Money
   monetize :price_cents

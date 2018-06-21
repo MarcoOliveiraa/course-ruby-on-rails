@@ -25,8 +25,13 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 # FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord. 
 gem 'friendly_id'
+# Kaminari is a Scope & Engine based, clean, powerful, agnostic, customizable and sophisticated paginator for Rails 3+
+gem 'kaminari'
+gem 'kaminari-i18n'
 # If Turbolinks are not enough for you. Wiselinks makes your application work faster.
 # gem 'wiselinks'
+# Automatically generate an entity-relationship diagram (ERD) for your Rails models.
+gem 'rails-erd'
 
 source 'https://rails-assets.org' do
 

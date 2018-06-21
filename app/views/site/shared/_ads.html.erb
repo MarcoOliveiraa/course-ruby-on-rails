@@ -20,17 +20,21 @@
  -->
 <div class="row">
   <% @ads.each do |ad| %>
-    <div class="thumbnail col-lg-4 col-md-6 mb-4"> 
-      <%= image_tag ad.picture.url(:medium) %>
-      <div class="caption"> 
+      <div class="thumbnail col-lg-4 col-md-6 mb-4"> 
+        <%= image_tag ad.picture.url(:medium) %>
+          <div class="caption"> 
           <div>
             <h4><%= link_to truncate(ad.title, length: 30), site_ad_detail_path(ad), remote: true  %></h4> 
             <%= humanized_money_with_symbol ad.price %>
           </div>
-            <p class="card-text"><%= ad.description_short %></p>
-        </p>
+          <p class="card-text"><%= truncate(ad.description_short, length: 30) %></p>
+        </div>
       </div>
-    </div>
   <% end %>
 </div>
- 
+
+<div class="row">
+  <div class="text-center">
+    <%= paginate @ads %>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="thumbnail">
+    <%= image_tag @ad.picture.url(:large), class:"img-responsive" %>
+    <div class="caption-full">
+        <h4 class="pull-right"><%= humanized_money_with_symbol @ad.price.to_s %></h4>
+        <h4>
+        	<p>
+        		<%= @ad.description.html_safe %>
+        	</p>
+        </h4>
+    </div>
+    <div class="ratings">
+        <p class="pull-right">3 reviews</p>
+        <p>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star"></span>
+            <span class="glyphicon glyphicon-star-empty"></span>
+            4.0 stars
+        </p>
+    </div>
+</div>
+
+<div class="well">
+
+    <% if member_signed_in? %>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#comentModal">
+        Deixe um comentário
+      </button>
+    <% end %>
+
+    <hr>
+
+    <%= render partial: "site/ad_detail/comments" %>
+
+</div>
+
+<%= render partial: "site/ad_detail/comment_modal" %>

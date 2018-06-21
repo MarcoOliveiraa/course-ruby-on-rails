@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :send_mail, only: [:edit, :create]
     resources :categories, except: [:show]
     resources :admins, except: [:show] 
+    resources :diagrams, only: [:index] 
     get 'dashboard', to: 'dashboard#index'
   end
 
@@ -19,9 +20,10 @@ Rails.application.routes.draw do
 
     resources :ad_detail, only: [:show]
     resources :categories, only: [:show]
+    resources :comments, only: [:create]
   end
 
-  devise_for :admins, :skip => [:registrations]
+  devise_for :admins
   devise_for :members, controllers: {
     sessions: 'members/sessions',
     registrations: 'members/registrations'
